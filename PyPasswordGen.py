@@ -50,8 +50,10 @@ Bletters_numbers_Symbols = t.Checkbutton(master, text="Symbols", variable=CBSymb
                                                                                                                    )
 def setPass():
     global generated_pass
-    print(generated_pass)
-    pass
+    global master
+    print("Password Has been copied to clipboard")
+    master.clipboard_clear()
+    master.clipboard_append(generated_pass)
 
 #Generate Password Gen Function and logic
 
@@ -129,6 +131,7 @@ def genPass():
 #Generate Button
 gen_button = t.Button(master, bg='RED', text="Generate!", width=25, 
                       command=genPass).grid(row=5)
+
 master.mainloop()
 
 
